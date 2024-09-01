@@ -1,8 +1,8 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
-import { AuthProvider } from "./src/components/AuthContext";
-import { ExpoRoot } from "expo-router";
+import { AuthProvider } from './src/components/AuthContext';
+import { ExpoRoot } from 'expo-router';
 
 export default function App() {
   return (
@@ -17,6 +17,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     flex: 1,
 
-    alignItems: "center",
+    alignItems: 'center',
   },
 });

@@ -1,26 +1,27 @@
-import { StyleSheet, View, ScrollView } from "react-native";
-import React from "react";
-import { Stack } from "expo-router";
+import { StyleSheet, View, ScrollView } from 'react-native';
+import React from 'react';
+import { Stack } from 'expo-router';
+import { Text } from 'react-native';
 
 //Estilos y temas
-import Theme from "../src/styles/Theme";
+import Theme from '../src/styles/Theme';
 
 //Componentes personalizados
-import MyText from "../src/components/UI/Text";
-import EventCard from "../src/components/UI/EventCard";
+import MyText from '../src/components/UI/Text';
+import EventCard from '../src/components/UI/EventCard';
 
 export default function Events() {
   return (
     <View style={styles.EventContainer}>
       <Stack.Screen
         options={{
-          title: "Eventos Disponibles",
+          title: 'Eventos Disponibles',
           headerShadowVisible: false,
           headerStyle: {
             backgroundColor: Theme.colors.primary,
           },
           headerTintColor: Theme.colors.white,
-          headerTitle: "",
+          headerTitle: '',
         }}
       />
       <MyText
@@ -41,12 +42,12 @@ export default function Events() {
 const styles = StyleSheet.create({
   EventContainer: {
     flex: 1,
-    alignItems: "center",
+    alignItems: 'center',
     backgroundColor: Theme.colors.primary,
   },
   EventScroll: {
     marginTop: 50,
     flex: 1,
-    width: "90%",
+    width: '90%',
   },
 });

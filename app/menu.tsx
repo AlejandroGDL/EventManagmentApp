@@ -1,40 +1,50 @@
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList } from 'react-native';
+import { Stack } from 'expo-router';
 
 // Importamos los componentes personalizados
-import MyButton from "../src/components/UI/Button";
-import MyText from "../src/components/UI/Text";
-import InfoCard from "../src/components/UI/InfoCard";
+import MyButton from '../src/components/UI/Button';
+import InfoCard from '../src/components/UI/InfoCard';
 
 // Importamos el tema personalizado
-import Theme from "../src/styles/Theme";
+import Theme from '../src/styles/Theme';
 
 // Importamos los iconos personalizados
-import Certificates from "../src/icons/Certificates";
-import AvailableEvents from "../src/icons/AvailableEvents";
-import CarreraBook from "../src/icons/CarreraBook";
+import Certificates from '../src/icons/Certificates';
+import AvailableEvents from '../src/icons/AvailableEvents';
+import CarreraBook from '../src/icons/CarreraBook';
 
-import User from "../src/UserData";
+import User from '../src/UserData';
 
-import UserComponent from "../src/components/UI/User";
+import UserComponent from '../src/components/UI/User';
 
 export default function Index() {
   return (
     <View style={styles.IndexContainer}>
+      <Stack.Screen
+        options={{
+          headerShadowVisible: false,
+          headerStyle: {
+            backgroundColor: Theme.colors.primary,
+          },
+          headerTintColor: Theme.colors.white,
+        }}
+      />
+
       <UserComponent />
 
       <View>
         <InfoCard
-          Title={"Carrera:"}
+          Title={'Carrera:'}
           Info={User.info.career}
           Icon={CarreraBook}
         />
         <InfoCard
-          Title={"Semestre:"}
+          Title={'Semestre:'}
           Info={User.info.semestre}
           Icon={CarreraBook}
         />
         <InfoCard
-          Title={"Horas acumuladas:"}
+          Title={'Horas acumuladas:'}
           Info={User.info.hours}
           Icon={CarreraBook}
         />
@@ -42,7 +52,7 @@ export default function Index() {
 
       <View style={styles.ConIndexButtons}>
         <MyButton
-          link="/certificates"
+          link='/certificates'
           Icon={Certificates}
           IconProps={{
             width: 30,
@@ -58,7 +68,7 @@ export default function Index() {
         </MyButton>
 
         <MyButton
-          link="/events"
+          link='/events'
           Icon={AvailableEvents}
           IconProps={{
             width: 30,
@@ -80,12 +90,12 @@ export default function Index() {
 const styles = StyleSheet.create({
   IndexContainer: {
     flex: 1,
-    alignItems: "center",
+    alignItems: 'center',
     gap: 50,
   },
 
   ConIndexButtons: {
-    display: "flex",
+    display: 'flex',
     gap: 20,
   },
 });

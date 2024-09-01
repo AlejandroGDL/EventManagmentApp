@@ -1,8 +1,8 @@
-import { StyleSheet, Pressable, View } from "react-native";
-import React from "react";
-import Theme from "../../styles/Theme";
-import MyText from "./Text";
-import { Link } from "expo-router";
+import { StyleSheet, Pressable, View } from 'react-native';
+import React from 'react';
+import Theme from '../../styles/Theme';
+import MyText from './Text';
+import { Link } from 'expo-router';
 
 type ButtonProps = {
   children?: string;
@@ -36,10 +36,10 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: Theme.radius.medium,
 
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
     gap: 10,
   },
 });
@@ -53,6 +53,7 @@ export default function MyButton(props: ButtonProps) {
         style={styles.ConButton}
       >
         <Pressable
+          onPress={props.Function}
           style={({ pressed }) => [
             styles.ConButton,
             {
@@ -79,6 +80,7 @@ export default function MyButton(props: ButtonProps) {
   } else {
     return (
       <Pressable
+        onPress={props.Function}
         style={({ pressed }) => [
           styles.ConButton,
           {
